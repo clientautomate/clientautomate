@@ -160,11 +160,14 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Nav */}
-      <nav className="border-b border-gray-100 px-8 py-4 flex items-center justify-between">
-        <a href="/">
-          <Image src="/logo.svg" alt="ClientAutomate" width={160} height={36} priority />
-        </a>
-        <div className="flex items-center gap-4">
+      <nav className="border-b border-gray-100 px-8 py-4 grid grid-cols-3 items-center">
+        <div />
+        <div className="flex justify-center">
+          <a href="/">
+            <Image src="/logo.svg" alt="ClientAutomate" width={280} height={63} priority />
+          </a>
+        </div>
+        <div className="flex items-center gap-4 justify-end">
           <a href="/login" className="text-sm text-gray-500 hover:text-gray-900">Sign in</a>
           <a href="/register" className="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
             Start free trial
