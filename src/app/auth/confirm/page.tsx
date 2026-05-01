@@ -11,7 +11,7 @@ export default function ConfirmPage() {
     async function confirm() {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        router.push("/dashboard");
+        router.push("/onboarding");
       } else {
         router.push("/login");
       }
