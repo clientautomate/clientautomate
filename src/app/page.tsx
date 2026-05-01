@@ -265,7 +265,7 @@ export default function Home() {
             <Link href="/terms" className="hover:text-gray-700">Terms</Link>
             <a href="mailto:hello@clientautomate.co.uk" className="hover:text-gray-700">hello@clientautomate.co.uk</a>
           </div>
-          <p className="text-sm text-gray-400">© 2026 ClientAutomate Ltd</p>
+          <p className="text-sm text-gray-400">© 2026 ClientAutomate</p>
         </div>
       </footer>
 
