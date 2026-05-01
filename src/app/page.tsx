@@ -9,7 +9,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/">
-            <Image src="/logo.svg" alt="ClientAutomate" width={160} height={36} priority />
+            <Image src="/logo.svg" alt="ClientAutomate" width={280} height={63} priority />
           </a>
           <div className="flex items-center gap-4">
             <Link href="/pricing" className="text-sm text-gray-500 hover:text-gray-900 hidden sm:block">
@@ -253,7 +253,7 @@ export default function Home() {
       <footer className="border-t border-gray-100 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="ClientAutomate" width={120} height={28} />
+            <Image src="/logo.svg" alt="ClientAutomate" width={210} height={49} />
           </div>
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <Link href="/pricing" className="hover:text-gray-700">Pricing</Link>
