@@ -4,14 +4,16 @@ import { createClient } from "@supabase/supabase-js";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-const PRICES: Record<string, string> = {
-  starter: process.env.STRIPE_PRICE_STARTER!,
-  growth: process.env.STRIPE_PRICE_GROWTH!,
-};
-
 export async function POST(req: NextRequest) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+  const PRICES: Record<string, string> = {
+    starter: process.env.STRIPE_PRICE_STARTER!,
+    growth: process.env.STRIPE_PRICE_GROWTH!,
+    agency: process.env.STRIPE_PRICE_AGENCY!,
+    early_bird: process.env.STRIPE_PRICE_STARTER!,
+  };
+
   const { plan } = await req.json();
 
   if (!PRICES[plan]) {
