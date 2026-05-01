@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     starter: process.env.STRIPE_PRICE_STARTER!,
     growth: process.env.STRIPE_PRICE_GROWTH!,
     agency: process.env.STRIPE_PRICE_AGENCY!,
-    early_bird: process.env.STRIPE_PRICE_STARTER!,
+    early_bird: process.env.STRIPE_PRICE_EARLY_BIRD!,
   };
 
   const { plan } = await req.json();
