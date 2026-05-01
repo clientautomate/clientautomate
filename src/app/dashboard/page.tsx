@@ -37,6 +37,24 @@ export default function DashboardPage() {
       }
       setUserEmail(user.email ?? "");
 
+      // Sprawdź subskrypcję — przekieruj na pricing jeśli brak aktywnej
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("subscription_status, trial_ends_at")
+        .eq("user_id", user.id)
+        .single();
+
+      const isTrialing = profile?.subscription_status === "trialing" &&
+        profile?.trial_ends_at &&
+        new Date(profile.trial_ends_at) > new Date();
+
+      const isActive = profile?.subscription_status === "active";
+
+      if (!isTrialing && !isActive) {
+        router.push("/pricing");
+        return;
+      }
+
       const { data: businesses } = await supabase
         .from("businesses")
         .select("id")
