@@ -190,9 +190,9 @@ export default function PricingPage() {
             </span>
             <button
               onClick={() => setBilling(billing === "monthly" ? "yearly" : "monthly")}
-              className={`relative w-12 h-6 rounded-full transition-colors overflow-hidden ${billing === "yearly" ? "bg-blue-600" : "bg-gray-200"}`}
+              className={`relative flex items-center w-12 h-6 rounded-full transition-colors p-1 ${billing === "yearly" ? "bg-blue-600" : "bg-gray-200"}`}
             >
-              <span className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${billing === "yearly" ? "translate-x-7" : "translate-x-1"}`} />
+              <span className={`w-4 h-4 bg-white rounded-full shadow transition-transform duration-200 ${billing === "yearly" ? "translate-x-6" : "translate-x-0"}`} />
             </button>
             <span className={`text-sm font-medium ${billing === "yearly" ? "text-gray-900" : "text-gray-400"}`}>
               Yearly
