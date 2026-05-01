@@ -52,7 +52,8 @@ export async function POST() {
   });
 
   // Automatycznie zapisz nowy token jeśli wygasł i został odświeżony
-  oauth2Client.on("tokens", async (tokens) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (oauth2Client as any).on("tokens", async (tokens: any) => {
     if (tokens.access_token) {
       await supabaseAdmin.from("businesses").update({
         google_access_token: tokens.access_token,
@@ -64,7 +65,8 @@ export async function POST() {
   });
 
   // 4. Pobierz recenzje z Google Business Profile API
-  const reviewsApi = google.mybusinessreviews({ version: "v4", auth: oauth2Client });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const reviewsApi = (google as any).mybusinessreviews({ version: "v4", auth: oauth2Client });
   const reviewsRes = await reviewsApi.accounts.locations.reviews.list({
     parent: `accounts/${business.google_account_id}/locations/${business.google_location_id}`,
   });

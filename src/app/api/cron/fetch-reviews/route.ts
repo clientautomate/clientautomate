@@ -47,7 +47,8 @@ export async function GET(req: NextRequest) {
       });
 
       // Zapisz odświeżony token jeśli wygasł
-      oauth2Client.on("tokens", async (tokens) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (oauth2Client as any).on("tokens", async (tokens: any) => {
         if (tokens.access_token) {
           await supabase.from("businesses").update({
             google_access_token: tokens.access_token,
@@ -58,7 +59,8 @@ export async function GET(req: NextRequest) {
         }
       });
 
-      const reviewsApi = google.mybusinessreviews({ version: "v4", auth: oauth2Client });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const reviewsApi = (google as any).mybusinessreviews({ version: "v4", auth: oauth2Client });
       const reviewsRes = await reviewsApi.accounts.locations.reviews.list({
         parent: `accounts/${business.google_account_id}/locations/${business.google_location_id}`,
       });
