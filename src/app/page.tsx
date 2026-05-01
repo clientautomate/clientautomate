@@ -7,14 +7,18 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/">
-            <Image src="/logo.svg" alt="ClientAutomate" width={280} height={63} priority />
-          </a>
-          <div className="flex items-center gap-4">
-            <Link href="/pricing" className="text-sm text-gray-500 hover:text-gray-900 hidden sm:block">
+        <div className="max-w-6xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+          <div className="flex items-center gap-6">
+            <Link href="/pricing" className="text-sm text-gray-500 hover:text-gray-900">
               Pricing
             </Link>
+          </div>
+          <div className="flex justify-center">
+            <a href="/">
+              <Image src="/logo.svg" alt="ClientAutomate" width={280} height={63} priority />
+            </a>
+          </div>
+          <div className="flex items-center gap-4 justify-end">
             <Link href="/login" className="text-sm text-gray-500 hover:text-gray-900">
               Sign in
             </Link>
