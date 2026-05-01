@@ -261,7 +261,8 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <Link href="/pricing" className="hover:text-gray-700">Pricing</Link>
-            <Link href="/login" className="hover:text-gray-700">Sign in</Link>
+            <Link href="/privacy" className="hover:text-gray-700">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-gray-700">Terms</Link>
             <a href="mailto:hello@clientautomate.co.uk" className="hover:text-gray-700">hello@clientautomate.co.uk</a>
           </div>
           <p className="text-sm text-gray-400">© 2026 ClientAutomate Ltd</p>
